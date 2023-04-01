@@ -80,17 +80,22 @@ const Contact = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" onClick={() => handleClick(2)}>
-                  Pricing
+                  Fare Calculator
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" onClick={() => handleClick(3)}>
-                  People
+                  Insights
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" onClick={() => handleClick(4)}>
                 Contact Us
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link">
+                About Us
                 </a>
               </li>
               <form onSubmit={handleSubmit} className="form-inline">
@@ -104,10 +109,16 @@ const Contact = () => {
       </div>
     </header>
     <Index/>
-    <FareCalc/>
-    <WhyChooseUs/>
+    <FareCalc 
+    divRefs={divRefs}
+    />
+    <WhyChooseUs
+    divRefs={divRefs}
+    />
     <WhatsappChat/>
-    <Counter/>
+    <Counter
+    divRefs={divRefs}
+    />
     {/* end header section */}
   </div>
       <section className="contact_section layout_padding">
