@@ -267,7 +267,6 @@ const options = {
 };
 
 const GraphComponent = () => {
-
   const [graphData, setGraphData] = useState(getInitialGraph());
   //const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
   const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
@@ -300,7 +299,7 @@ const GraphComponent = () => {
           node.icon = {
             face: 'FontAwesome',
             code: '\uf0fd',
-            size: 1500000,
+            size: 150,
             color: 'yellow',
           };
         }
@@ -379,14 +378,15 @@ const GraphComponent = () => {
         if (node.id === current) {
           node.visited = true;
         }
-  
+        //1, node.visited
+        //2, node.id === current
         let backgroundColor;
-        if (node.visited && targetNodes.includes(node.id)) {
-          backgroundColor = 'green';
-        } else if (targetNodes.includes(node.id) && node.id === current) {
+        if (node.id === current && targetNodes.includes(node.id)) {
           backgroundColor = 'yellow';
+        } else if ( node.visited && targetNodes.includes(node.id)) {
+          backgroundColor = 'green';
         } else {
-          backgroundColor = {};
+          backgroundColor = 'red';
         }
   
         return {
