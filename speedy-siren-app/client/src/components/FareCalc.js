@@ -1,9 +1,10 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './style.css';
 import intercity from '../images/inter.gif'
 import axios from 'axios'
+import { useState,useRef } from 'react';
 
-const FareCalc = () => {
+const FareCalc = ({divRefs}) => {
     const [row1, setRow1] = useState('');
     const [column1, setColumn1] = useState('');
     const [displayedDistance, setDisplayedDistance] = useState(null);
@@ -31,7 +32,7 @@ const FareCalc = () => {
     <img src={intercity} className="col col-image"></img>
     <div className="col col-text">
       <div className="Aligner-item">
-        <h1 style={{ color: '#0055b3', marginTop:'200px' }}>Intra City Fare Calculator</h1>
+        <h1 ref={(el) => (divRefs.current[2] = el)} style={{ color: '#0055b3', marginTop:'200px' }}>Intra City Fare Calculator</h1>
         <p>This calculator helps in giving an estimate for intra city ambulance need</p>
         <form>
           <div className="input-group">

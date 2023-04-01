@@ -196,6 +196,13 @@ const {row, column } = req.body;
 // const row= 1;
 // const column=2;
 const start = `${row},${column}`;
+<<<<<<< HEAD
+
+const result = graph.dijkstra(start, '4,1');
+console.log(result.distance); // 7
+console.log(result.path);
+res.json({ distance: result.distance });
+=======
 const temp_dist_array = [];
 const dict = {};
 let key = 0;
@@ -254,6 +261,7 @@ try{
 catch{
   res.json({ message: 'good job boi!' });
 }//result.distance
+>>>>>>> 36373361677877c6754e2ecaf3378580aac52fae
 // });
 });
 // const result = graph.dijkstra(start, '4,1');
