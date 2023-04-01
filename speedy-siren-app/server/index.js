@@ -256,12 +256,6 @@ catch{
 }//result.distance
 // });
 });
-// const result = graph.dijkstra(start, '4,1');
-// console.log(result.distance); // 7
-// console.log(result.path);
-// res.json({ distance: result.distance });
-// // });
-// });
 
 
 const PORT = process.env.PORT ||3002;
