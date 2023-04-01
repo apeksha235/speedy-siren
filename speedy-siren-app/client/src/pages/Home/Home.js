@@ -88,8 +88,7 @@ To further expedite the ambulance's arrival, the traffic signal system prioritiz
               </div>
             </div>
             <div className="col-md-6 col-lg-2 mx-auto footer_col">
-              <div className="footer_link_box">
-                
+              <div className="footer_link_box">                
               </div>
             </div>
             <div className="col-md-6 col-lg-3 footer_col">
