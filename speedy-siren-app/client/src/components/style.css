@@ -532,7 +532,12 @@ a:focus {
   text-align: center;
   position: relative;
 }
+.aboutimg
+{
+  height:70%;
+  width:700px%;
 
+}
 .doctor_section .box .detail-box .social_box {
   position: absolute;
   z-index: 2;

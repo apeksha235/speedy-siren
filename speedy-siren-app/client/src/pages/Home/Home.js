@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import Contact from "../../components/Contact"
 import Header from "../../components/Header"
+import about from '../../images/about.jpg'
 
 const Home = () => {
 
@@ -18,7 +19,7 @@ const Home = () => {
 
             <div className="col-md-6">
               <div className="img-box">
-                <img src="images/about-img.jpg" alt="" />
+              <img src={about}></img>
               </div>
             </div>
             <div className="col-md-6">
