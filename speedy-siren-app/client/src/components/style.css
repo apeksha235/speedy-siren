@@ -456,7 +456,7 @@ a:focus {
           align-items: center;
 }
 
-.about_section .img-box {
+.about_section .img-box-about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,7 +465,7 @@ a:focus {
           justify-content: center;
 }
 
-.about_section .img-box img {
+.about_section .img-box-about img {
   width: 100%;
   border-radius: 15px;
 }
@@ -1018,10 +1018,10 @@ ul {
     padding: 0;
     list-style: none;
 }
-img {
+/* img {
 max-width: 30%;
 height: auto;
-}
+} */
 span, a, a:hover {
 display: inline-block;
 text-decoration: none;
@@ -1295,7 +1295,7 @@ textarea { height: 80px; resize: none; }
 
 #formBtn {
   appearance: none;
-  background-color: #cc0000;
+  background-color: #d82c2c;
   border-width: 0;
   box-sizing: border-box;
   color: #000000;
