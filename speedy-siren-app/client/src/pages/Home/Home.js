@@ -16,10 +16,14 @@ const Home = () => {
       <section className="about_section layout_padding">
         <div className="container">
           <div className="row">
+          <img src={about} height="500px" width="1000px"></img>
 
             <div className="col-md-6">
+
               <div className="img-box">
-              <img src={about}></img>
+
+              <div className="aboutimg">
+              </div>
               </div>
             </div>
             <div className="col-md-6">
@@ -33,6 +37,9 @@ const Home = () => {
                 A user in distress seeks assistance through a web application designed to locate nearby hospitals and assess their current traffic density. The app calculates the shortest possible time for an ambulance to reach the user by considering the distance of each hospital. Upon identifying the most efficient route, the app sends a notification to the selected hospital to dispatch an ambulance.
 To further expedite the ambulance's arrival, the traffic signal system prioritizes the emergency vehicle by turning the signals green when the ambulance approaches an intersection, while other signals turn red. This ensures the ambulance reaches the user as quickly as possible.
                 </p>
+
+
+
                 {/* <Link to="/">Read More</Link> */}
               </div>
             </div>
