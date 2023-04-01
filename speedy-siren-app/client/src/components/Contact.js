@@ -14,10 +14,14 @@ import { useState,useRef } from 'react';
 import axios from 'axios';
 
 
-const Contact = () => {
+const Contact = () => { 
+  const [choose, setchoose] = useState(false)
   const divRefs = useRef([]);
   function handleClick(index) {
     divRefs.current[index].scrollIntoView({ behavior: 'smooth' });
+  }
+  const handleChoose=()=>{
+    window.location.reload();
   }
   const [formData, setFormData] = useState({
     name: '',
@@ -73,7 +77,10 @@ const Contact = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={() => handleClick(1)}>
+                <a className="nav-link" onClick={() => {
+                    handleClick(1);
+                    handleChoose();
+                  }}>
                   {' '}
                   Why choose us?
                 </a>

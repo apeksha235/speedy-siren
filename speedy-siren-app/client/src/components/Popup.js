@@ -13,6 +13,10 @@ function Popup(props) {
     });
     const { distance } = response.data;
      console.log("RESPONSE!!!!!!", distance)
+     e.preventDefault();
+     setRow('')
+     setColumn('')
+     props.onClose();
   };
   const handleRowChange = (e) => {
     setRow(e.target.value);
@@ -23,29 +27,26 @@ function Popup(props) {
   };
 
   function handleSubmit(event) {
-    event.preventDefault();
-    setRow('')
-    setColumn('')
-    props.onClose();
+
   }
 
   return (
     <div  id="contactForm" style={{ display: props.showPopup ? 'block' : 'none' }}>
-    <h2>Address</h2>
-      <form onSubmit={findNearestHospital}>
+    <h2 style={{color:"#000000"}}>Address</h2>
+      <form onSubmit={handleSubmit} >
       <div class="user-box">
-        <label>
+        <label style={{color:"#d82c2c"}}>
           Row:
         </label>
         <input type="number" value={row} onChange={handleRowChange} />
         </div>
         <div class="user-box">
-        <label>
+        <label style={{color:"#d82c2c"}}>
           Column:
         </label>
         <input type="number" value={column} onChange={handleColumnChange} />
         </div>
-        <button onClick={handleSubmit} type="submit" id="formBtn" > 
+        <button onClick={findNearestHospital}  type="submit" id="formBtn" > 
         Submit
         </button>
       </form>

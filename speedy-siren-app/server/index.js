@@ -6,6 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+let row={};
+let column={};
 // app.get('/nearest-hospital', async (req, res) => {
 //   // Get user's geolocation from query params
 //   //const { lat, lng } = req.query;
@@ -192,17 +194,10 @@ function printGraph(graph) {
 // console.log(nearest_hospital);
 
 
-const {row, column } = req.body;
+row, column = req.body;
 // const row= 1;
 // const column=2;
 const start = `${row},${column}`;
-<<<<<<< HEAD
-
-const result = graph.dijkstra(start, '4,1');
-console.log(result.distance); // 7
-console.log(result.path);
-res.json({ distance: result.distance });
-=======
 const temp_dist_array = [];
 const dict = {};
 let key = 0;
@@ -261,7 +256,6 @@ try{
 catch{
   res.json({ message: 'good job boi!' });
 }//result.distance
->>>>>>> 36373361677877c6754e2ecaf3378580aac52fae
 // });
 });
 // const result = graph.dijkstra(start, '4,1');
@@ -270,6 +264,10 @@ catch{
 // res.json({ distance: result.distance });
 // // });
 // });
+
+app.get('/get-data', (req, res) => {
+  res.status(200).json({ row: row, col: column });
+});
 
 
 const PORT = process.env.PORT ||3002;

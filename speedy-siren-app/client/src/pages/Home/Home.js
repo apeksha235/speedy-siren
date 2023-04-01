@@ -13,21 +13,18 @@ const Home = () => {
   return (
     <>
     <Contact/>
-      <section className="about_section layout_padding">
-        <div className="container">
-          <div className="row">
-          <img src={about} height="500px" width="1000px"></img>
+    <section className="about_section layout_padding">
+  <div className="container">
+    <div className="row">
+      {/* Move the image column here */}
+      <div className="col-md-6">
+        <div className="img-box-about">
+          <img src={about} height="500px" width="1000px" />
+        </div>
+      </div>
+      <div className="col-md-6">
+        <div className="detail-box">
 
-            <div className="col-md-6">
-
-              <div className="img-box">
-
-              <div className="aboutimg">
-              </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="detail-box">
                 <div className="heading_container">
                   <h2>
                     About Our <span>Service</span>

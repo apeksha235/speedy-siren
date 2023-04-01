@@ -34,6 +34,7 @@ const options = {
 };
 
 const GraphComponent = () => {
+
   const [graphData, setGraphData] = useState(getInitialGraph());
   //const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
   const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
@@ -76,6 +77,22 @@ const GraphComponent = () => {
   //   return quadrants.map((_, index) => (index === 0 ? 'green' : 'red'));
   // }
   function traverseGraph() {
+    const [row, setRowData] = useState(null);
+    const [column, setColData] = useState(null);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('http://localhost:3002/get-data');
+          setRowData(response.data.row);
+          setColData(response.data.col);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+      fetchData();
+    }, []);
     const startNode = '7,0';
     const endNode = '2,7';
     const nodes = graphData.nodes.map((node) => ({
