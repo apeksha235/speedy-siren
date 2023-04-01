@@ -104,10 +104,10 @@ const Contact = () => {
       </div>
     </header>
     <Index/>
+    <FareCalc/>
     <WhyChooseUs/>
     <WhatsappChat/>
     <Counter/>
-    <FareCalc/>
     {/* end header section */}
   </div>
       <section className="contact_section layout_padding">

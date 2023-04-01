@@ -31,7 +31,7 @@ const Index = () => {
                   facilities and commitment to excellence ensure you receive
                   the highest quality treatment.
                 </p>
-                <button onClick={handleButtonClick} class="button-48" role="button"><span class="text">Book an Ambulance</span></button>
+                <button onClick={handleButtonClick} class="button-48" role="button"><span>Book an Ambulance</span></button>
                 <Popup showPopup={showPopup} onClose={handleClose} />
               </div>
             </div>

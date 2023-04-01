@@ -45,7 +45,7 @@ function Popup(props) {
         </label>
         <input type="number" value={column} onChange={handleColumnChange} />
         </div>
-        <button type="submit" id="formBtn" > 
+        <button onClick={handleSubmit} type="submit" id="formBtn" > 
         Submit
         </button>
       </form>
