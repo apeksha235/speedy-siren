@@ -226,7 +226,7 @@ a:focus {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(193, 126, 126);
+  background-color:rgb(255, 205, 205) ;
   top: -10px;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
@@ -281,7 +281,7 @@ a:focus {
 }
 
 .slider_section .detail-box {
-  color: #1fab89;
+  color: rgb(255, 205, 205);
 }
 
 .slider_section .detail-box h1 {
@@ -315,7 +315,7 @@ a:focus {
   display: inline-block;
   padding: 10px 15px;
   background-color: #ffffff;
-  color: #62d2a2;
+  color: rgb(255, 205, 205);
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -390,7 +390,7 @@ a:focus {
   width: 90px;
   height: 90px;
   margin-bottom: 15px;
-  background-color: #62d2a2;
+  background-color: rgb(255, 205, 205);
   border-radius: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -416,12 +416,12 @@ a:focus {
 }
 
 .department_section .box .detail-box a {
-  color: #1fab89;
+  color: rgb(255, 205, 205);
   font-weight: 600;
 }
 
 .department_section .box .detail-box a:hover {
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
 }
 
 .department_section .btn-box {
@@ -437,17 +437,17 @@ a:focus {
 .department_section .btn-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #62d2a2;
+  background-color: rgb(255, 205, 205);
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #62d2a2;
+  border: 1px solid rgb(255, 205, 205);
 }
 
 .department_section .btn-box a:hover {
   background-color: transparent;
-  color: #62d2a2;
+  color: rgb(255, 205, 205);
 }
 
 .about_section .row {
@@ -481,18 +481,18 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #62d2a2;
+  background-color:rgb(255, 205, 205);
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #62d2a2;
+  border: 1px solid rgb(255, 205, 205);
   margin-top: 15px;
 }
 
 .about_section .detail-box a:hover {
   background-color: transparent;
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
 }
 
 .doctor_section {
@@ -557,12 +557,12 @@ a:focus {
 }
 
 .doctor_section .box .detail-box .social_box a {
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
   margin: 0 10px;
 }
 
 .doctor_section .box .detail-box .social_box a:hover {
-  color: #1fab89;
+  color: rgb(255, 205, 205);
 }
 
 .doctor_section .box:hover .social_box {
@@ -583,17 +583,17 @@ a:focus {
 .doctor_section .btn-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #1fab89;
+  background-color: rgb(255, 205, 205);
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #1fab89;
+  border: 1px solid rgb(255, 205, 205);
 }
 
 .doctor_section .btn-box a:hover {
   background-color: transparent;
-  color: #1fab89;
+  color: rgb(255, 205, 205);
 }
 
 .contact_section {
@@ -732,7 +732,7 @@ a:focus {
 }
 
 .client_section .box .detail-box .name h6 {
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
   font-size: 20px;
 }
 
@@ -755,7 +755,7 @@ a:focus {
   background-repeat: no-repeat;
   background-size: 12px;
   background-position: center;
-  background-color: #62d2a2;
+  background-color:rgb(255, 205, 205);
   background-position: center;
   border-radius: 5px;
   margin: 0 2.5px;
@@ -763,7 +763,7 @@ a:focus {
 
 .client_section .carousel-control-prev:hover,
 .client_section .carousel-control-next:hover {
-  background-color: #1fab89;
+  background-color: rgb(255, 205, 205);
 }
 
 .client_section .carousel-control-next {
@@ -771,7 +771,7 @@ a:focus {
 }
 
 .footer_section {
-  background: #178066;
+  background: rgb(157, 171, 171);
   color: #ffffff;
   padding: 60px 0 15px 0;
   position: relative;
@@ -806,7 +806,7 @@ a:focus {
 }
 
 .footer_section .footer_contact .contact_link_box a:hover {
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
 }
 
 .footer_section .footer_social {
@@ -834,7 +834,7 @@ a:focus {
 }
 
 .footer_section .footer_social a:hover {
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
 }
 
 .footer_section .footer_links {
@@ -858,7 +858,7 @@ a:focus {
 }
 
 .footer_section .footer_links a:hover {
-  color: #62d2a2;
+  color:rgb(255, 205, 205);
 }
 
 .footer_section form input {
@@ -898,7 +898,7 @@ a:focus {
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #62d2a2;
+  border: 1px solidrgb(255, 205, 205);
   margin-top: 15px;
 }
 
