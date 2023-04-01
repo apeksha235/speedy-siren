@@ -60,7 +60,7 @@ To further expedite the ambulance's arrival, the traffic signal system prioritiz
                   </a>
                   <a href="">
                     <i className="fa fa-envelope" aria-hidden="true"></i>
-                    <span>demo@gmail.com</span>
+                    <span>speedyysiren@gmail.com</span>
                   </a>
                 </div>
               </div>
@@ -83,10 +83,7 @@ To further expedite the ambulance's arrival, the traffic signal system prioritiz
               <div className="footer_detail">
                 <h4>About</h4>
                 <p>
-                  Beatae provident nobis mollitia magnam voluptatum, unde dicta
-                  facilis minima veniam corporis laudantium alias tenetur
-                  eveniet illum reprehenderit fugit a delectus officiis
-                  blanditiis ea.
+                  We at speedy siren provide the best and fastest service.
                 </p>
               </div>
             </div>
