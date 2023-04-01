@@ -164,12 +164,72 @@ console.log(nearest_hospital);
 
 const {row, column } = req.body;
 const start = `${row},${column}`;
-const result = graph.dijkstra(start, '4,1');
-console.log(result.distance); // 7
-console.log(result.path);
-res.json({ distance: result.distance });
+const temp_dist_array = [];
+const dict = {};
+let key = 0;
+let val = [];
+for(let i = 0; i <hospitals.length; i++){
+  //console.log("len", hospitals.length);
+  const r = String(hospitals[i].x_axis);
+  const c = String(hospitals[i].y_axis);
+  const loc = r.concat(',', c);//${hospitals[i].x_axis},${hospitals[i].y_axis}';
+  //console.log("loc",loc);
+  const temp_ans = graph.dijkstra(start, loc);
+  key = temp_ans.distance;
+  val = temp_ans.path;
+  console.log("val", val);
+  console.log("key", key);
+  dict[key] = val;
+  console.log(dict);
+  //const dist = temp_ans.distance
+  //temp_array.push(temp_ans);
+}
+const firstKey = Object.keys(dict)[0];
+console.log(firstKey);
+const firstArray = dict[firstKey];
+const lastElement = firstArray[firstArray.length - 1];
+console.log(lastElement);
+let current=1;
+for(let i = 0; i <hospitals.length; i++){
+  current=i;
+  //console.log("len", hospitals.length);
+  const r = String(hospitals[i].x_axis);
+  const c = String(hospitals[i].y_axis);
+  const loc = r.concat(',', c);
+  console.log(loc)
+  console.log(lastElement)
+  if(loc===lastElement){
+     break;
+    //  temp123=hospitals[i].id;
+  }
+  else{
+    console.log('not working');
+  }
+}
+const temp123=hospitals[current].id;
+console.log(temp123);
+//const shortest_info = Math.min(...temp_array);
+//const nearest_hospital = array.indexOf(shortest_info);
+//const result = graph.dijkstra('2,0', '4,1');
+//console.log(result); // 7
+//console.log(result.path);
+//console.log(nearest_hospital);
+
+
+try{
+  res.json({ distance: result.distance });//result.distance
+}
+catch{
+  res.json({ message: 'good job boi!' });
+}//result.distance
 // });
 });
+// const result = graph.dijkstra(start, '4,1');
+// console.log(result.distance); // 7
+// console.log(result.path);
+// res.json({ distance: result.distance });
+// // });
+// });
 
 
 const PORT = process.env.PORT ||3002;
