@@ -6,13 +6,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+let row={};
+let column={};
 // app.get('/nearest-hospital', async (req, res) => {
 //   // Get user's geolocation from query params
 //   //const { lat, lng } = req.query;
 
   // Find the nearest hospital using your preferred algorithm
   // ...
-  app.get('/test', (req, res) => {
+app.get('/test', (req, res) => {
     res.json({ message: 'Server is working' });
   });
   // Get the shortest path and traffic signal information
@@ -192,7 +194,7 @@ function printGraph(graph) {
 // console.log(nearest_hospital);
 
 
-const {row, column } = req.body;
+row, column = req.body;
 // const row= 1;
 // const column=2;
 const start = `${row},${column}`;
@@ -256,12 +258,10 @@ catch{
 }//result.distance
 // });
 });
-// const result = graph.dijkstra(start, '4,1');
-// console.log(result.distance); // 7
-// console.log(result.path);
-// res.json({ distance: result.distance });
-// // });
-// });
+
+app.get('/get-data', (req, res) => {
+  res.status(200).json({ row: row, col: column });
+});
 
 
 const PORT = process.env.PORT ||3002;
