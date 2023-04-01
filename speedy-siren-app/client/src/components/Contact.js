@@ -72,7 +72,7 @@ const Contact = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" onClick={() => handleClick(0)}>
+                <a className="nav-link">
                   Home{' '}
                 </a>
               </li>
@@ -116,8 +116,8 @@ const Contact = () => {
       </div>
     </header>
     <Index/>
+    <p ref={(el) => (divRefs.current[2] = el)}>.</p>
     <FareCalc 
-    divRefs={divRefs}
     />
     <WhyChooseUs
     divRefs={divRefs}

@@ -32,7 +32,7 @@ const FareCalc = ({divRefs}) => {
     <img src={intercity} className="col col-image"></img>
     <div className="col col-text">
       <div className="Aligner-item">
-        <h1 ref={(el) => (divRefs.current[2] = el)} style={{ color: '#0055b3', marginTop:'200px' }}>Intra City Fare Calculator</h1>
+        <h1 style={{ color: '#0055b3', marginTop:'200px' }}>Intra City Fare Calculator</h1>
         <p>This calculator helps in giving an estimate for intra city ambulance need</p>
         <form>
           <div className="input-group">
