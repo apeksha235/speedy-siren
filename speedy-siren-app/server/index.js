@@ -12,7 +12,7 @@ app.use(express.json());
 
   // Find the nearest hospital using your preferred algorithm
   // ...
-  app.get('/test', (req, res) => {
+app.get('/test', (req, res) => {
     res.json({ message: 'Server is working' });
   });
   // Get the shortest path and traffic signal information
