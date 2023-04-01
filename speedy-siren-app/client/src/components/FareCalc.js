@@ -37,8 +37,11 @@ const FareCalc = ({divRefs}) => {
         <form>
           <div className="input-group">
             <div className="label-group">
+              <br></br>
+
               <span className="label">From</span>
             </div>
+            
             <div className="user-box">
               <label htmlFor="inp-to-row" className="inp">
                 <input onChange={handleRowChange1} value={row1} type="text" id="inp-to-row" placeholder="&nbsp;" />
@@ -64,8 +67,8 @@ const FareCalc = ({divRefs}) => {
           </br>
           <br></br>
           {displayedDistance !== null && (
-          <div>
-            <p>Cost from nearest hospital: Rs.{displayedDistance*70}</p>
+          <div >
+           <button class="button-85" role="button">Cost from nearest hospital: Rs.{displayedDistance*70}</button>
           </div>
         )}
 
