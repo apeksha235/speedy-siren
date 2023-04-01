@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// export default GraphComponent;
+import React, { useState } from 'react';
 import Graph from 'react-graph-vis';
 
 const options = {
@@ -43,18 +44,35 @@ const GraphComponent = () => {
     for (let row = 1; row <= 10; row++) {
       for (let col = 1; col <= 10; col++) {
         const id = `${row},${col}`;
+        const label = (id === '3,4') ? 'hospital' : id;
         const color =  (Math.random() < 0.5 ? 'red' : 'green');
-        nodes.push({
+
+
+        const node = {
           id,
-          label: id,
+          label,
           x: col * 350,
           y: row * 350,
           size: 50,
           color: {
             background: color,
           },
+          font: {
+            color: 'lightblue',
+            size: (id === '3,4') ? 100 : 14, // increase font size for hospital label
+            face: 'arial',
+          },
           visited: false,
-        });
+        };
+        if (id === '4,2' || id==='7,5' || id==='8,7' || id==='9,3'|| id==='6,7'|| id==='8,9'|| id==='5,5'|| id==='3,8') {
+          node.icon = {
+            face: 'FontAwesome',
+            code: '\uf0fd',
+            size: 100,
+            color: 'yellow',
+          };
+        }
+        nodes.push(node);
       }
     }
 
@@ -155,12 +173,12 @@ const GraphComponent = () => {
         //           ctx.fillRect((i % 2) * (size / 2), Math.floor(i / 2) * (size / 2), size / 2, size / 2);
         //         });
 
-        //         return ctx.canvas.toDataURL();
-        //       },
-        //     },
-        //   },
-        // }}
-        //style={{ height: '500px' }}
+                return ctx.canvas.toDataURL();
+              },
+            },
+          },
+        }}
+        style={{ height: '500px' }}
       />
     </div>
   );
