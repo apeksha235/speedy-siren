@@ -30,7 +30,7 @@ function Popup(props) {
   }
 
   return (
-    <div class="login-box" style={{ display: props.showPopup ? 'block' : 'none' }}>
+    <div  id="contactForm" style={{ display: props.showPopup ? 'block' : 'none' }}>
     <h2>Address</h2>
       <form onSubmit={findNearestHospital}>
       <div class="user-box">
@@ -45,8 +45,9 @@ function Popup(props) {
         </label>
         <input type="number" value={column} onChange={handleColumnChange} />
         </div>
-        <button type="submit" className='button-48'> 
-        Submit</button>
+        <button type="submit" id="formBtn" > 
+        Submit
+        </button>
       </form>
     </div>
   );

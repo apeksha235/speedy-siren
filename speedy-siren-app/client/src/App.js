@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Home from "./pages/Home/Home"
 import { BrowserRouter as Router, Routes,Route } from "react-router-dom";
-import GridMap from './pages/Home/Graph/Map';
-import {animatePath} from './pages/Home/Graph/animation';
+// import GridMap from './pages/Home/Graph/Map';
+// import {animatePath} from './pages/Home/Graph/animation';
 
 // function App() {
 //   // const [location, setLocation] = useState(null);
