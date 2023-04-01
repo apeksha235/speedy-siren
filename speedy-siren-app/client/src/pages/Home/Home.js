@@ -85,25 +85,7 @@ To further expedite the ambulance's arrival, the traffic signal system prioritiz
               </div>
             </div>
             <div className="col-md-6 col-lg-2 mx-auto footer_col">
-              <div className="footer_link_box">
-                <h4>Links</h4>
-                <div className="footer_links">
-                  <Link className="" to="/">
-                    Home
-                  </Link>
-                  <Link className="active" to="/about">
-                    About
-                  </Link>
-                  <Link className="" to="/departments">
-                    Departments
-                  </Link>
-                  <Link className="" to="/doctors">
-                    Doctors
-                  </Link>
-                  <Link className="" to="/contact">
-                    Contact Us
-                  </Link>
-                </div>
+              <div className="footer_link_box">                
               </div>
             </div>
             <div className="col-md-6 col-lg-3 footer_col">

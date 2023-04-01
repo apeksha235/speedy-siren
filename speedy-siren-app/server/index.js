@@ -258,12 +258,6 @@ catch{
 }//result.distance
 // });
 });
-// const result = graph.dijkstra(start, '4,1');
-// console.log(result.distance); // 7
-// console.log(result.path);
-// res.json({ distance: result.distance });
-// // });
-// });
 
 app.get('/get-data', (req, res) => {
   res.status(200).json({ row: row, col: column });
