@@ -1,16 +1,15 @@
-// export default GraphComponent;
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Graph from 'react-graph-vis';
 
 const options = {
   layout: {
     randomSeed: 1,
-    nodeDistance: 200,
+    nodeDistance: 250,
   },
   physics: {
     enabled: false,
     repulsion: {
-      nodeDistance: 700,
+      //nodeDistance: 700,
     },
 
   },
@@ -21,7 +20,7 @@ const options = {
       },
     },
     color: '#000000',
-    width: 50,
+    width: 80,
   },
   nodes: {
     borderWidth: 0,
@@ -36,8 +35,9 @@ const options = {
 
 const GraphComponent = () => {
   const [graphData, setGraphData] = useState(getInitialGraph());
-  const [targetNodes, setTargetNodes] = useState(['3,1', '4,1', '5,2', '6,2', '7,3', '8,4', '9,5', '9,6', '9,7', '9,8']);
-
+  //const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
+  const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
+  const [currentNode, setCurrentNode] = useState(null);
   function getInitialGraph() {
     const nodes = [];
     for (let row = 1; row <= 10; row++) {
@@ -75,10 +75,9 @@ const GraphComponent = () => {
   // function getUpdatedQuadrants(quadrants) {
   //   return quadrants.map((_, index) => (index === 0 ? 'green' : 'red'));
   // }
-
   function traverseGraph() {
-    const startNode = '3,1';
-    const endNode = '9,8';
+    const startNode = '7,0';
+    const endNode = '2,7';
     const nodes = graphData.nodes.map((node) => ({
       ...node,
       distance: node.id === startNode ? 0 : Infinity,
@@ -86,35 +85,47 @@ const GraphComponent = () => {
     }));
     const edges = graphData.edges.map((edge) => ({
       ...edge,
-      weight: 1,
+      weight: 1, //here we change the weights
     }));
-    let current = startNode;
-
+  
+    let index = 0;
+  
     const timer = setInterval(() => {
-      if (current === endNode) {
+      const current = targetNodes[index];
+  
+      if (current === endNode || index >= targetNodes.length) {
         clearInterval(timer);
         return;
       }
-
-      const currentIdx = nodes.findIndex((node) => node.id === current);
-      //nodes[currentIdx].quadrants = getUpdatedQuadrants(nodes[currentIdx].quadrants);
-      nodes[currentIdx].visited = true;
-      const unvisitedNodes = nodes.filter((node) => !node.visited);
-      const unvisitedDistances = unvisitedNodes.map((node) => node.distance);
-      const minDistance = Math.min(...unvisitedDistances);
-      const closestNode = unvisitedNodes.find((node) => node.distance === minDistance);
-      current = closestNode.id;
-
-      const newGraphData = {
-        nodes: nodes.map((node) => ({
+  
+      const updatedNodes = nodes.map((node) => {
+        if (node.id === current) {
+          node.visited = true;
+        }
+  
+        let backgroundColor;
+        if (node.visited && targetNodes.includes(node.id)) {
+          backgroundColor = 'green';
+        } else if (targetNodes.includes(node.id) && node.id === current) {
+          backgroundColor = 'yellow';
+        } else {
+          backgroundColor = 'red';
+        }
+  
+        return {
           ...node,
           color: {
-            background: targetNodes && targetNodes.includes(node.id) ? 'green' : {},
+            background: backgroundColor,
           },
-        })),
+        };
+      });
+  
+      setGraphData({
+        nodes: updatedNodes,
         edges: edges,
-      };
-      setGraphData(newGraphData);
+      });
+  
+      index++;
     }, 1000);
   }
 
@@ -123,30 +134,33 @@ const GraphComponent = () => {
       <button onClick={traverseGraph}>Traverse Graph</button>
       <Graph
         graph={graphData}
-        options={{
-          ...options,
-          nodes: {
-            ...options.nodes,
-            color: {
-              background: (node) => {
-                const index = graphData.nodes.findIndex((n) => n.id === node.id);
-                const quadrants = graphData.nodes[index].quadrants;
-                const size = node.size;
-                const ctx = document.createElement('canvas').getContext('2d');
-                ctx.canvas.width = size;
-                ctx.canvas.height = size;
+        options={options}
+        style={{ height: '800px' }}
+        // options={{
+        //   ...options,
+        //   nodes: {
+        //     ...options.nodes,
+        //     color: {
+        //       //background: getNodeColor(node)
+        //       background: (node) => {
+        //         const index = graphData.nodes.findIndex((n) => n.id === node.id);
+        //         const quadrants = graphData.nodes[index].quadrants;
+        //         const size = node.size;
+        //         const ctx = document.createElement('canvas').getContext('2d');
+        //         ctx.canvas.width = size;
+        //         ctx.canvas.height = size;
 
-                quadrants.forEach((color, i) => {
-                  ctx.fillStyle = color;
-                  ctx.fillRect((i % 2) * (size / 2), Math.floor(i / 2) * (size / 2), size / 2, size / 2);
-                });
+        //         quadrants.forEach((color, i) => {
+        //           ctx.fillStyle = color;
+        //           ctx.fillRect((i % 2) * (size / 2), Math.floor(i / 2) * (size / 2), size / 2, size / 2);
+        //         });
 
-                return ctx.canvas.toDataURL();
-              },
-            },
-          },
-        }}
-        style={{ height: '500px' }}
+        //         return ctx.canvas.toDataURL();
+        //       },
+        //     },
+        //   },
+        // }}
+        //style={{ height: '500px' }}
       />
     </div>
   );

@@ -164,6 +164,7 @@ console.log(nearest_hospital);
 
 const {row, column } = req.body;
 const start = `${row},${column}`;
+
 const result = graph.dijkstra(start, '4,1');
 console.log(result.distance); // 7
 console.log(result.path);
