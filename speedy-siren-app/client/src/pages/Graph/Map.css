@@ -1,0 +1,11 @@
+@keyframes path-flash {
+    0% {
+      box-shadow: 0 0 10px 5px yellow;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px yellow;
+    }
+    100% {
+      box-shadow: 0 0 10px 5px yellow;
+    }
+} 
