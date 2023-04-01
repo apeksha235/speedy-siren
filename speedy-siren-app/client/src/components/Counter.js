@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './counter.css';
 
-const Counter = () => {
+const Counter = ({divRefs}) => {
   const counters = [
     { icon: 'fa-clock', value: 15, text: 'Average Response time' },
     { icon: 'fas fa-users', value: 875, text: 'Lives Saved' },
@@ -10,7 +10,7 @@ const Counter = () => {
   ];
 
   return (
-    <div className="wrapper-counter">
+    <div ref={(el) => (divRefs.current[3] = el)} className="wrapper-counter">
       {counters.map((counter) => (
         <CounterItem key={counter.text} {...counter} />
       ))}

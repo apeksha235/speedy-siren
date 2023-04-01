@@ -3,13 +3,13 @@ import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faAnchor, faHourglassHalf, faClock, faAmbulance } from '@fortawesome/free-solid-svg-icons';
 
-function WhyChooseUs() {
+function WhyChooseUs({divRefs}) {
   return (
     <div className="feat bg-gray pt-5 pb-5">
       <div className="container">
         <div className="row">
           <div className="section-head col-sm-12">
-            <h4><span>Why Choose</span> Us?</h4>
+            <h4 ref={(el) => (divRefs.current[1] = el)}><span>Why Choose</span> Us?</h4>
           </div>
           <div className="col-lg-4 col-sm-6">
             <div className="item">
