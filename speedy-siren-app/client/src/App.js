@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Home from "./pages/Home/Home"
 import { BrowserRouter as Router, Routes,Route } from "react-router-dom";
-import Graph from './pages/Graph/Map';
-import Graph from './pages/Graph/Map';
+import Graph from './pages/Graph/Map'
+// import {animatePath} from './pages/Home/Graph/animation';
 
 
 class App extends React.Component {
@@ -22,9 +22,6 @@ class App extends React.Component {
       <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
-        <Route path="/graph" element={<Graph />} />
       </Routes>
       <Routes>
         <Route path="/graph" element={<Graph />} />

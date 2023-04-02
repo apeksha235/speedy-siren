@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Graph from 'react-graph-vis';
 import axios from 'axios';
-import axios from 'axios'
 
 
 const options = {
