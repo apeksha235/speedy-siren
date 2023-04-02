@@ -39,7 +39,7 @@ const options = {
 const GraphComponent = () => {
   const [graphData, setGraphData] = useState(getInitialGraph());
   //const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
-  const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
+  const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '3,8']);
   const [currentNode, setCurrentNode] = useState(null);
   const [row, setRowData] = useState(null);
   const [column, setColData] = useState(null);

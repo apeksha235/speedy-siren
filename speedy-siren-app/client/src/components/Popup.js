@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import './style.css'
 import axios from 'axios'
+import Map from '../pages/Graph/Map'
 
 function Popup(props) {
   const [row, setRow] = useState('');
   const [column, setColumn] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isClick,setIsClick]=useState(false)
+  const [message, setmessage] = useState('')
 
   const findNearestHospital = async (e) => {
     e.preventDefault();
@@ -21,11 +24,12 @@ function Popup(props) {
     });
     const { distance } = response.data;
     console.log("RESPONSE!!!!!!", distance)
+    setmessage('Ambulance at distance '+`${distance}`)
     e.preventDefault();
-    props.onClose()
-    setRow('')
-    setColumn('')
-    setErrorMessage('')
+    // setRow('')
+    // setColumn('')
+    // setErrorMessage('')
+    // setmessage('')
   };
 
   const handleRowChange = (e) => {
@@ -61,6 +65,7 @@ function Popup(props) {
           <input type="number" value={column} onChange={handleColumnChange} />
         </div>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        {message && <p style={{ color: 'black' }}>{message}</p>}
         <button onClick={findNearestHospital} type="submit" id="formBtn">
           Submit
         </button>
