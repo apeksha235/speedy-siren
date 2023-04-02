@@ -233,6 +233,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Graph from 'react-graph-vis';
+import axios from 'axios';
 
 const options = {
   layout: {
@@ -335,7 +336,7 @@ const GraphComponent = () => {
   // function getUpdatedQuadrants(quadrants) {
   //   return quadrants.map((_, index) => (index === 0 ? 'green' : 'red'));
   // }
-  function traverseGraph() {
+  function traverseGraph(row, column) {
     const [row, setRowData] = useState(null);
     const [column, setColData] = useState(null);
   
@@ -345,7 +346,7 @@ const GraphComponent = () => {
           const response = await axios.get('http://localhost:3002/get-data');
           setRowData(response.data.row);
           setColData(response.data.col);
-        } catch (error) {
+        } catch (error){
           console.error(error);
         }
       };
