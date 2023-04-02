@@ -80,8 +80,6 @@ class Graph {
         visitedNodes.push(currentNode);
         delete unvisitedNodes[currentNode];
       }
-      
-      // Reconstruct the shortest path
       const path = [];
       let currentNode = endNode;
       while (currentNode !== startNode) {
