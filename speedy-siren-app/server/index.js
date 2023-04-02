@@ -6,8 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let row={};
-let column={};
+// let row={};
+// let column={};
 // app.get('/nearest-hospital', async (req, res) => {
 //   // Get user's geolocation from query params
 //   //const { lat, lng } = req.query;
@@ -194,7 +194,7 @@ function printGraph(graph) {
 // console.log(nearest_hospital);
 
 
-row, column = req.body;
+const {row, column} = req.body;
 // const row= 1;
 // const column=2;
 const start = `${row},${column}`;
@@ -241,6 +241,7 @@ for(let i = 0; i <hospitals.length; i++){
   }
 }
 const temp123=hospitals[current].id;
+
 console.log(temp123);
 //const shortest_info = Math.min(...temp_array);
 //const nearest_hospital = array.indexOf(shortest_info);
@@ -251,7 +252,7 @@ console.log(temp123);
 
 
 try{
-  res.json({ distance: result.distance });//result.distance
+  res.json({ distance: firstKey});//result.distance
 }
 catch{
   res.json({ message: 'good job boi!' });
