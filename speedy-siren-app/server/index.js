@@ -218,9 +218,10 @@ for(let i = 0; i <hospitals.length; i++){
   //const dist = temp_ans.distance
   //temp_array.push(temp_ans);
 }
-const firstKey = Object.keys(dict)[0];
+const firstKey = Object.keys(dict)[0];//total cost
 console.log(firstKey);
-const firstArray = dict[firstKey];
+//const winner_path = dict[firstKey]
+const firstArray = dict[firstKey];//winning path
 const lastElement = firstArray[firstArray.length - 1];
 console.log(lastElement);
 let current=1;
