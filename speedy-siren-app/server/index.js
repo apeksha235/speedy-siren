@@ -80,8 +80,6 @@ class Graph {
         visitedNodes.push(currentNode);
         delete unvisitedNodes[currentNode];
       }
-      
-      // Reconstruct the shortest path
       const path = [];
       let currentNode = endNode;
       while (currentNode !== startNode) {
@@ -241,9 +239,20 @@ for(let i = 0; i <hospitals.length; i++){
     console.log('not working');
   }
 }
-const temp123=hospitals[current].id;
+const temp123=hospitals[current].name;
 
 console.log(temp123);
+
+// file1.js
+
+module.exports = firstKey;
+module.exports = firstArray;
+module.exports = lastElement;
+module.exports = temp123;
+
+
+
+
 //const shortest_info = Math.min(...temp_array);
 //const nearest_hospital = array.indexOf(shortest_info);
 //const result = graph.dijkstra('2,0', '4,1');
@@ -253,7 +262,7 @@ console.log(temp123);
 
 
 try{
-  res.json({ distance: firstKey});//result.distance
+  res.json({firstKey:firstKey, firstArray:firstArray, lastElement:lastElement,temp123:temp123 });//result.distance
 }
 catch{
   res.json({ message: 'not good boi!' });
