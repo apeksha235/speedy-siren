@@ -1,74 +1,8 @@
 import React, { useState } from 'react';
 import Home from "./pages/Home/Home"
 import { BrowserRouter as Router, Routes,Route } from "react-router-dom";
-// import GridMap from './pages/Home/Graph/Map';
-// import {animatePath} from './pages/Home/Graph/animation';
+import Graph from './pages/Graph/Map';
 
-// function App() {
-//   // const [location, setLocation] = useState(null);
-
-//   // const getLocation = async () => {
-//   //   if (navigator.geolocation) {
-//   //     navigator.geolocation.getCurrentPosition(async (position) => {
-//   //       const { latitude, longitude } = position.coords;
-//   //       setLocation({ lat: latitude, lng: longitude });
-
-//   //       const response = await axios.get('http://localhost:3001/nearest-hospital', {
-//   //         params: { lat: latitude, lng: longitude },
-//   //       });
-
-//   //       // Process the response and update the UI
-//   //       // ...
-//   //     });
-//   //   } else {
-//   //     alert('Geolocation is not supported by this browser.');
-//   //   }
-//   // };
-//   return (
-//     <div className="App">
-//        <Router>
-//       <Routes>
-//         <Route path="/" element={<Home/>} />
-//       </Routes>
-//     </Router>
-//     </div>
-//   );
-// }
-//class App extends React.Component {
-  // render() {
-  //   const blockStyles = [
-  //     { backgroundColor: "red" }, // Custom style for the first block
-  //     { backgroundColor: "blue" }, // Default style for the second block
-  //     { backgroundColor: "green" }, // Default style for the third block
-  //     { backgroundColor: "orange" }, // Default style for the fourth block
-  //     { backgroundColor: "purple" }, // Default style for the fifth block
-  //     { backgroundColor: "gray" }, // Default style for the sixth block
-  //     { backgroundColor: "gray" }, // Default style for the seventh block
-  //     { backgroundColor: "gray" }, // Default style for the eighth block
-  //     { backgroundColor: "gray" }, // Default style for the ninth block
-  //     { backgroundColor: "yellow" }, // Custom style for the last block
-  //   ];
-  //   return (
-  //     <div>
-  //       <GridMap blockStyles={blockStyles}/>
-  //     </div>
-  //   );
-  // }
-//import React from 'react';
-//import GridMap from './GridMap';
-//____________________________________yellow glow box_______________________
-// const path = [0, 6, 7, 8, 13, 18, 19, 24];
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <GridMap path={path} />
-//       </div>
-//     );
-//   }
-// }
-// export default App;
 
 class App extends React.Component {
   render() {
@@ -87,6 +21,9 @@ class App extends React.Component {
       <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+      </Routes>
+      <Routes>
+        <Route path="/graph" element={<Graph />} />
       </Routes>
     </Router>
       </div>

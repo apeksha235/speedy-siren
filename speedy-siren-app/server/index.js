@@ -260,9 +260,9 @@ catch{
 // });
 });
 
-// app.get('/get-data', (req, res) => {
-//   res.status(200).json({ row: row, col: column });
-// });
+app.get('/get-data', (req, res) => {
+  res.status(200).json({ row: row, col: column });
+});
 
 
 const PORT = process.env.PORT ||3002;
