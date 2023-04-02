@@ -1,27 +1,31 @@
 import { useState } from 'react';
 import './style.css'
 import axios from 'axios'
+import Map from '../pages/Graph/Map'
 
 function Popup(props) {
   const [row, setRow] = useState('');
   const [column, setColumn] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isClick,setIsClick]=useState(false)
 
-  const findNearestHospital = async (e) => {
-    e.preventDefault();
-
+  const sendRequest = async () => {
     if (row < 1 || row > 10 || column < 1 || column > 10) {
       setErrorMessage('Enter values from 1-10');
       return;
     }
-
-    const response = await axios.post('http://localhost:3002/find-hospital', {
-      row: parseInt(row),
-      column: parseInt(column),
-    });
-    const { distance } = response.data;
-    console.log("RESPONSE!!!!!!", distance)
-    e.preventDefault();
+    setIsClick(true)
+    try {
+      const response = await axios.get('/get-data', {
+        params: {
+          row: row,
+          column: column,
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
     props.onClose()
     setRow('')
     setColumn('')
@@ -44,6 +48,7 @@ function Popup(props) {
   }
 
   return (
+    <>
     <div id="contactForm" style={{ display: props.showPopup ? 'block' : 'none' }}>
       <button onClick={handleSubmit} style={{ position: 'absolute', right: '10px', top: '10px' }}>X</button>
       <h2 style={{ color: "#000000" }}>Address</h2>
@@ -61,11 +66,16 @@ function Popup(props) {
           <input type="number" value={column} onChange={handleColumnChange} />
         </div>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button onClick={findNearestHospital} type="submit" id="formBtn">
+        <button onClick={sendRequest} type="submit" id="formBtn">
           Submit
         </button>
       </form>
     </div>
+    {
+      isClick && 
+      <Map/>
+    }
+    </>
   );
 }
 

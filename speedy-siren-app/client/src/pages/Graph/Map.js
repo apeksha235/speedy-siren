@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Graph from 'react-graph-vis';
 import axios from 'axios'
 
+
 const options = {
   layout: {
     randomSeed: 1,
@@ -39,10 +40,10 @@ const options = {
 const GraphComponent = () => {
   const [graphData, setGraphData] = useState(getInitialGraph());
   //const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
-  const [targetNodes, setTargetNodes] = useState(['7,0', '7,1', '7,2', '7,3', '7,4', '6,4', '6,5', '6,6', '5,6', '5,7', '4,7', '3,7', '2,7']);
   const [currentNode, setCurrentNode] = useState(null);
   const [row, setRowData] = useState(null);
   const [column, setColData] = useState(null);
+  const [data,setData]=useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +51,7 @@ const GraphComponent = () => {
         const response = await axios.get('http://localhost:3002/get-data');
         setRowData(response.data.row);
         setColData(response.data.col);
+        console.log("ROW AND COLUMN: ",row)
       } catch (error) {
         console.error(error);
       }
@@ -57,17 +59,33 @@ const GraphComponent = () => {
 
     fetchData();
   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post('http://localhost:3002/find-hospital', {
+          row: row,
+          column: column,
+        });
+
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const [targetNodes, setTargetNodes] = useState(data.firstArray);
   function getInitialGraph() {
     const nodes = [];
     for (let row = 1; row <= 10; row++) {
       for (let col = 1; col <= 10; col++) {
         const id = `${row},${col}`;
-        const label = (id === '3,4') ? 'hospital' : id;
         const color =  (Math.random() < 0.5 ? 'red' : 'green');
         
         const node = {
           id,
-          label,
+          label:id,
           x: col * 350,
           y: row * 350,
           size: 50,
@@ -123,7 +141,7 @@ const GraphComponent = () => {
   // }
   function traverseGraph(row,column) {
     const startNode = `${row},${column}`;
-    const endNode = '2,7';
+    const endNode = data.lastElement;
     const nodes = graphData.nodes.map((node) => ({
       ...node,
       distance: node.id === startNode ? 0 : Infinity,
