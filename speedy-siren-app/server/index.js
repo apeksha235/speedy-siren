@@ -14,7 +14,7 @@ let column={};
 
   // Find the nearest hospital using your preferred algorithm
   // ...
-app.get('/test', (req, res) => {
+  app.get('/test', (req, res) => {
     res.json({ message: 'Server is working' });
   });
   // Get the shortest path and traffic signal information
@@ -198,7 +198,7 @@ row, column = req.body;
 // const row= 1;
 // const column=2;
 const start = `${row},${column}`;
-const temp_dist_array = [];
+//const temp_dist_array = [];
 const dict = {};
 let key = 0;
 let val = [];
@@ -254,14 +254,14 @@ try{
   res.json({ distance: result.distance });//result.distance
 }
 catch{
-  res.json({ message: 'good job boi!' });
+  res.json({ message: 'not good boi!' });
 }//result.distance
 // });
 });
 
-app.get('/get-data', (req, res) => {
-  res.status(200).json({ row: row, col: column });
-});
+// app.get('/get-data', (req, res) => {
+//   res.status(200).json({ row: row, col: column });
+// });
 
 
 const PORT = process.env.PORT ||3002;
