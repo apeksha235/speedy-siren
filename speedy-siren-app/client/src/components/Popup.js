@@ -10,9 +10,7 @@ function Popup(props) {
   const [isClick,setIsClick]=useState(false)
   const [message, setmessage] = useState('')
 
-  const findNearestHospital = async (e) => {
-    e.preventDefault();
-
+  const sendRequest = async () => {
     if (row < 1 || row > 10 || column < 1 || column > 10) {
       setErrorMessage('Enter values from 1-10');
       return;
@@ -48,6 +46,7 @@ function Popup(props) {
   }
 
   return (
+    <>
     <div id="contactForm" style={{ display: props.showPopup ? 'block' : 'none' }}>
       <button onClick={handleSubmit} style={{ position: 'absolute', right: '10px', top: '10px' }}>X</button>
       <h2 style={{ color: "#000000" }}>Address</h2>
@@ -71,6 +70,11 @@ function Popup(props) {
         </button>
       </form>
     </div>
+    {
+      isClick && 
+      <Map/>
+    }
+    </>
   );
 }
 

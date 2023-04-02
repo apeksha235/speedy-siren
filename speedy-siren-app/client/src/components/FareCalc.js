@@ -28,33 +28,40 @@ const FareCalc = ({divRefs}) => {
       };
   return (
 <section>
+  <br></br>
+  <br></br>
   <div className="grid-flex">
     <img src={intercity} className="col col-image"></img>
     <div className="col col-text">
       <div className="Aligner-item">
+       {/* <br></br>
+       <br></br> */}
         <h1 style={{ color: '#0055b3', marginTop:'200px' }}>Intra City Fare Calculator</h1>
         <p>This calculator helps in giving an estimate for intra city ambulance need</p>
         <form>
           <div className="input-group">
-            <div className="label-group">
-              <span className="label">From</span>
-            </div>
-            <div className="user-box">
+            {/* <div className="label-group">
+              <br></br>
+              {/* <span className="label">From</span> */}
+              {/* <br></br>
+              <br></br>
+            </div> */} 
+            {/* <div className="user-box"> */}
+            <p>From :</p>
+<br></br>
               <label htmlFor="inp-to-row" className="inp">
                 <input onChange={handleRowChange1} value={row1} type="text" id="inp-to-row" placeholder="&nbsp;" />
                 <span className="label">Row</span>
               </label>
-            </div>
-            <div className="user-box">
+            {/* </div> */}
+            {/* <div className="user-box"> */}
               <label htmlFor="inp-to-col" className="inp">
                 <input onChange={handleColumnChange1} value={column1} type="text" id="inp-to-col" placeholder="&nbsp;" />
-                <span className="label">Column</span>
+                <span className="labelc">Column</span>
               </label>
-            </div>
+            {/* </div> */}
           </div>
         </form>
-        <br />
-        <br />
         <br />
         <div className="container">
           <button onClick={calculate} className="button-30" role="button">
@@ -65,9 +72,11 @@ const FareCalc = ({divRefs}) => {
           <br></br>
           {/* {displayedDistance !== null && ( */}
           <div>
-            <p>Cost from nearest hospital: Rs.{displayedDistance*70}</p>
+          <button class="button-85" role="button"> <p>Cost from nearest hospital: Rs.{displayedDistance*70}</p></button>
+
           </div>
         {/* } */}
+
 
         </div>
       </div>
